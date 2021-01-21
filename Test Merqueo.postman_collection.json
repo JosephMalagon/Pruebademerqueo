@@ -1,0 +1,72 @@
+{
+	"info": {
+		"_postman_id": "646e785a-46d0-44f8-8617-cb44122c598f",
+		"name": "Test Merqueo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Temerqueo 1",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.environment.set(\"HOST\",\"https://jsonplaceholder.typicode.com\")\r",
+							"pm.globals.set(\"Post\",\"/posts\")"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/posts",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Temerqueo 2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{HOST}}{{Post}}",
+					"host": [
+						"{{HOST}}{{Post}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Temerqueo 3",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{HOST}}{{Post}}/1",
+					"host": [
+						"{{HOST}}{{Post}}"
+					],
+					"path": [
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
